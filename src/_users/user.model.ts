@@ -5,7 +5,7 @@ export interface UserAttributes {
     id: number;
     email: string;
     passwordHash: string;
-    tittle: string;
+    title: string;
     firstName: string;
     lastName: string;
     role: string;
@@ -20,7 +20,7 @@ implements UserAttributes {
     public id!: number;
     public email!: string;
     public passwordHash!: string;
-    public tittle!: string;
+    public title!: string;
     public firstName!: string;
     public lastName!: string;
     public role!: string;
@@ -44,7 +44,7 @@ export default function(sequelize: Sequelize): typeof User {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        tittle: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -80,7 +80,7 @@ export default function(sequelize: Sequelize): typeof User {
                 attributes: { exclude: ['passwordHash'] }
             },
             scopes: {
-                withhash: {
+                withHash: {
                     attributes: { include: ['passwordHash'] },
                 }
             }

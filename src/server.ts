@@ -14,7 +14,7 @@ app.use('/users', usersController);
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5800;
 
 initialize()
     .then(() => {

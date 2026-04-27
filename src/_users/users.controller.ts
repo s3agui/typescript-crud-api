@@ -50,8 +50,8 @@ function _delete(req: Request, res: Response, next: NextFunction): void {
 function createSchema(req: Request, res: Response, next: NextFunction): void {
     const schema = Joi.object({
        title: Joi.string().required(),
-       firstname: Joi.string().required(),
-         lastname: Joi.string().required(),
+       firstName: Joi.string().required(),
+         lastName: Joi.string().required(),
          role: Joi.string().valid(Role.USER, Role.ADMIN).required(),
          email: Joi.string().email().required(),
          password: Joi.string().min(6).required(),
@@ -64,8 +64,8 @@ function createSchema(req: Request, res: Response, next: NextFunction): void {
 function updateSchema(req: Request, res: Response, next: NextFunction): void {
     const schema = Joi.object({
         title: Joi.string().empty(''),
-        firstname: Joi.string().empty(''),
-        lastname: Joi.string().empty(''),
+        firstName: Joi.string().empty(''),
+        lastName: Joi.string().empty(''),
         role: Joi.string().valid(Role.USER, Role.ADMIN).empty(''),
         email: Joi.string().email().empty(''),
         password: Joi.string().min(6).empty(''),
